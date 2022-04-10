@@ -7,7 +7,7 @@ const auth = getAuth(app);
 
 const Login = () => {
   const [signInWithGoogle, user] = useSignInWithGoogle(auth);
-  console.log(user);
+  console.log(user?.displayName);
   return (
     <div>
       <form className="mt-4">
