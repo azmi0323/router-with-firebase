@@ -9,6 +9,8 @@ const Login = () => {
                 <input className='px-3 py-2 m-2' type="password" placeholder='Your password' name="" id="" />
                 <br />
                 <input className='btn btn-primary' type="button" value="Login" />
+                <br />
+                <input className='btn mt-2 btn-info' type="button" value="SignIn With Google" />
             </form>
         </div>
     );
