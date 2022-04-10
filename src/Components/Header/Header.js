@@ -1,8 +1,8 @@
 import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
-import { useAuthState, useSignInWithGoogle } from "react-firebase-hooks/auth";
-import { getAuth } from "firebase/auth";
+import { useAuthState} from "react-firebase-hooks/auth";
+import { getAuth,signOut } from "firebase/auth";
 import app from "../../Firebase.init";
 
 const auth = getAuth(app);
@@ -16,10 +16,10 @@ const Header = () => {
         <Link to="/products">Products</Link>
         <Link to="/orders">Orders</Link>
         <Link to="/reviews">Reviews</Link>
-        <Link to="/login">Login</Link>
+
         <Link to="/register">Register</Link>
-        <h3>{user.displayName}</h3>
-        <button>Log Out</button>
+        <span>{user?.displayName && user.displayName}</span>
+        {user?.uid ? <button onClick={()=>signOut(auth)}>Log Out</button> : <Link to="/login">Login</Link>}
       </nav>
     </div>
   );
