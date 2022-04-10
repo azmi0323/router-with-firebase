@@ -1,12 +1,13 @@
 import React from "react";
 import { getAuth } from "firebase/auth";
 import app from "../../Firebase.init";
-import {useSignInWithGoogle} from 'react-firebase-hooks/auth'
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 
 const auth = getAuth(app);
 
 const Login = () => {
-    const [signInWithGoogle,user]=useSignInWithGoogle(auth);
+  const [signInWithGoogle, user] = useSignInWithGoogle(auth);
+  console.log(user);
   return (
     <div>
       <form className="mt-4">
@@ -28,7 +29,10 @@ const Login = () => {
         <br />
         <input className="btn btn-primary" type="button" value="Login" />
         <br />
-        <input onClick={()=>{signInWithGoogle()}}
+        <input
+          onClick={() => {
+            signInWithGoogle();
+          }}
           className="btn mt-2 btn-info"
           type="button"
           value="SignIn With Google"
