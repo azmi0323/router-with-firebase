@@ -6,7 +6,7 @@ import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 const auth = getAuth(app);
 
 const Login = () => {
-  const [signInWithGoogle, user] = useSignInWithGoogle(auth);
+  const [signInWithGoogle] = useSignInWithGoogle(auth);
   
   return (
     <div>
