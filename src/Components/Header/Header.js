@@ -16,7 +16,6 @@ const Header = () => {
         <Link to="/products">Products</Link>
         <Link to="/orders">Orders</Link>
         <Link to="/reviews">Reviews</Link>
-
         <Link to="/register">Register</Link>
         <span className="fw-bold text-primary">{user?.displayName && user.displayName}</span>
         {user?.uid ? <button className="btn btn-danger ms-2" onClick={()=>signOut(auth)}>Sign Out</button> : <Link to="/login">Login</Link>}
